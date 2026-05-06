@@ -301,7 +301,7 @@ export const EXERCISES = [
         label: '1/1 (rapide)',
         cycle: [
           { type: 'inhale', duration: 1, label: 'Inspire ample et profond' },
-          { type: 'exhale', duration: 1, label: 'Ha ha soufflé' },
+          { type: 'exhale', duration: 1, label: 'HA soufflé' },
         ],
       },
       {
@@ -309,7 +309,7 @@ export const EXERCISES = [
         label: '1.5/1.5 (standard)',
         cycle: [
           { type: 'inhale', duration: 1.5, label: 'Inspire ample et profond' },
-          { type: 'exhale', duration: 1.5, label: 'Ha ha soufflé' },
+          { type: 'exhale', duration: 1.5, label: 'HA soufflé' },
         ],
       },
       {
@@ -317,13 +317,13 @@ export const EXERCISES = [
         label: '2/2 (lent)',
         cycle: [
           { type: 'inhale', duration: 2, label: 'Inspire ample et profond' },
-          { type: 'exhale', duration: 2, label: 'Ha ha soufflé' },
+          { type: 'exhale', duration: 2, label: 'HA soufflé' },
         ],
       },
     ],
     voicePrompts: {
       inhale: 'Inspire ample et profond',
-      exhale: 'Ha ha soufflé',
+      exhale: 'HA soufflé',
     },
   },
 

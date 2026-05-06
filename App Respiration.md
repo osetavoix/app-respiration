@@ -4,11 +4,18 @@ type: context
 status: actif
 casquette: Tech
 tags: [app, pwa, respiration, lead-magnet]
+url: https://app-respiration.vercel.app/
+github: https://github.com/osetavoix/app-respiration
+deployed: 2026-05-07
 ---
 
 # App Respiration
 
 PWA (Progressive Web App) dédiée aux exercices de respiration vocale. Lead magnet gratuit pour [[COLIMAO]] et outil quotidien pour les élèves de [[Lucas Fanchon]].
+
+🌐 **Live** : https://app-respiration.vercel.app/
+📦 **Repo** : https://github.com/osetavoix/app-respiration
+🚀 **Déploiement** : Vercel auto à chaque push sur `main`
 
 ## Concept
 
