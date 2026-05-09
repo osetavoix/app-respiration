@@ -1,4 +1,5 @@
 import { CATEGORIES, EXERCISES } from '../data/exercises.js';
+import { MEDITATIONS } from '../data/meditations.js';
 
 function formatMin(sec) {
   const m = Math.round(sec / 60);
@@ -47,7 +48,14 @@ export default function WelcomeScreen({ onSelectCategory, todaySec, streak }) {
 
       <div className="grid flex-1 grid-cols-1 gap-5 sm:grid-cols-2">
         {CATEGORIES.map((cat) => {
-          const items = EXERCISES.filter((e) => e.category === cat.id);
+          const items =
+            cat.kind === 'video'
+              ? MEDITATIONS
+              : EXERCISES.filter((e) => e.category === cat.id);
+          const itemLabel =
+            cat.kind === 'video'
+              ? `${items.length} méditation${items.length > 1 ? 's' : ''}`
+              : `${items.length} exercice${items.length > 1 ? 's' : ''}`;
           return (
             <button
               key={cat.id}
@@ -63,11 +71,16 @@ export default function WelcomeScreen({ onSelectCategory, todaySec, streak }) {
               <div className="relative flex h-full flex-col justify-between gap-4">
                 <div>
                   {cat.image ? (
-                    <img
-                      src={cat.image}
-                      alt=""
-                      className="h-36 w-36 object-contain drop-shadow-2xl sm:h-44 sm:w-44"
-                    />
+                    <div
+                      className="flex h-28 w-28 items-center justify-center rounded-full border-2 sm:h-32 sm:w-32"
+                      style={{ borderColor: cat.accent }}
+                    >
+                      <img
+                        src={cat.image}
+                        alt=""
+                        className="h-[6.25rem] w-[6.25rem] object-contain drop-shadow-xl sm:h-28 sm:w-28"
+                      />
+                    </div>
                   ) : (
                     <div className="text-4xl">{cat.icon}</div>
                   )}
@@ -83,9 +96,7 @@ export default function WelcomeScreen({ onSelectCategory, todaySec, streak }) {
                 </div>
 
                 <div className="flex items-center justify-between text-xs uppercase tracking-widest text-cream/50">
-                  <span>
-                    {items.length} exercice{items.length > 1 ? 's' : ''}
-                  </span>
+                  <span>{itemLabel}</span>
                   <span className="transition-transform group-hover:translate-x-1">
                     →
                   </span>

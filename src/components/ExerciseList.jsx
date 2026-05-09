@@ -1,8 +1,12 @@
 import { EXERCISES, CATEGORIES } from '../data/exercises.js';
+import { MEDITATIONS } from '../data/meditations.js';
 
 export default function ExerciseList({ category, onSelect, onBack }) {
   const cat = CATEGORIES.find((c) => c.id === category) || CATEGORIES[0];
-  const items = EXERCISES.filter((e) => e.category === cat.id);
+  const items =
+    cat.kind === 'video'
+      ? MEDITATIONS
+      : EXERCISES.filter((e) => e.category === cat.id);
 
   return (
     <div className="mx-auto w-full max-w-2xl px-5 py-8">
@@ -52,12 +56,14 @@ export default function ExerciseList({ category, onSelect, onBack }) {
               <div className="relative">
                 <div className="flex items-baseline justify-between gap-3">
                   <h3 className="text-xl font-medium text-cream">{ex.name}</h3>
-                  <span
-                    className="shrink-0 text-xs uppercase tracking-widest"
-                    style={{ color: ex.accent }}
-                  >
-                    {ex.short}
-                  </span>
+                  {ex.short && (
+                    <span
+                      className="shrink-0 text-xs uppercase tracking-widest"
+                      style={{ color: ex.accent }}
+                    >
+                      {ex.short}
+                    </span>
+                  )}
                 </div>
                 <p className="mt-2 text-sm leading-relaxed text-cream/70">
                   {ex.description}

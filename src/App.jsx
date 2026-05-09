@@ -2,6 +2,7 @@ import { useState } from 'react';
 import WelcomeScreen from './components/WelcomeScreen.jsx';
 import ExerciseList from './components/ExerciseList.jsx';
 import SessionScreen from './components/SessionScreen.jsx';
+import MeditationVideoScreen from './components/MeditationVideoScreen.jsx';
 import StatsPanel from './components/StatsPanel.jsx';
 import NotificationButton from './components/NotificationButton.jsx';
 import { useSessionTracking } from './hooks/useSessionTracking.js';
@@ -25,6 +26,14 @@ export default function App() {
   }
 
   if (exercise) {
+    if (exercise.youtubeId) {
+      return (
+        <MeditationVideoScreen
+          meditation={exercise}
+          onExit={() => setExercise(null)}
+        />
+      );
+    }
     return (
       <SessionScreen
         exercise={exercise}

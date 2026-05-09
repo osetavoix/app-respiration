@@ -146,6 +146,19 @@ Identifiées dans les transcripts COLIMAO/Respiration de Lucas (audit 2026-05-06
 - Parcours personnalisé selon profil HD
 - Comparaison avant/après (enregistrements)
 
+### Onglet Méditations complètes — extensions V2
+
+Ajouté en V1 le 9/05 avec une 1ère vidéo (Mathilde, YouTube embed). Architecture extensible : voir `src/data/meditations.js` (suffit de rajouter une entrée avec `youtubeId`).
+
+**À venir (idée Lucas brain dump 9/05) :**
+
+- **Méditations musicales par durée — composées par Lucas** : 6 morceaux musicaux de durées 10 / 15 / 20 / 30 / 40 / 60 minutes. L'utilisateur choisit sa durée, l'app joue le morceau correspondant. Chaque morceau se termine naturellement à sa durée (pas de fade-out artificiel — composition pensée pour atterrir au bon moment).
+  - **Source audio confirmée 9/05 :** 6 fichiers MP3 (ou WAV→Opus encodés comme App Feedback Vocal pour économiser bande passante). Composés par Lucas.
+  - **Hébergement à décider :** Supabase Storage de l'app (cohérent avec App Feedback Vocal) ou Vercel `public/` direct (plus simple, mais limite taille build).
+  - **UX cible :** card "Méditation musicale" → écran sélecteur 6 boutons durée → player audio plein cadre (pas vidéo, juste cercle visuel + barre progression + play/pause).
+  - **Effort estimé après livraison fichiers :** 4-6h dev (sélecteur + player audio + tracking session) + ~1-2h pour ajouter le tracking dans `useSessionTracking`.
+- **Méditations Mathilde additionnelles** — quand Mathilde sort de nouvelles vidéos, juste push une entrée dans `MEDITATIONS` (`src/data/meditations.js`).
+
 ### Features V3+
 
 - Sons d'ambiance (forêt, océan)

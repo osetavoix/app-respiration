@@ -342,6 +342,7 @@ export const CATEGORIES = [
     id: 'vocale',
     label: 'Respiration pour ta voix',
     icon: '🎤',
+    image: '/images/souffle-micro.png',
     tagline:
       "Routine respiratoire pour soutenir et faire grandir ta voix — souffle ample, diaphragme qui descend, sons qui osent sortir (très bon pour échauffer la voix avant de chanter ou parler en public, et chaque jour pour la garder libre).",
     accent: '#fb7185',
@@ -350,9 +351,20 @@ export const CATEGORIES = [
     id: 'meditative',
     label: 'Respiration pour ta voie',
     icon: '🧘',
+    image: '/images/chemin.png',
     tagline:
       "Routine respiratoire pour toucher des états méditatifs ou de conscience amplifiée, et pour se connecter au calme et à la paix intérieure (très bon avant une prestation et chaque jour pour trouver l'inspiration).",
     accent: '#60a5fa',
+  },
+  {
+    id: 'meditations-completes',
+    label: 'Méditations',
+    icon: '🌙',
+    image: '/images/bouddha.png',
+    tagline:
+      "Sessions guidées plus longues, à faire allongé ou assis dans un endroit calme. Méditations partagées avec Mathilde et méditations musicales — pour relâcher en profondeur, revenir à soi, te ressourcer.",
+    accent: '#a78bfa',
+    kind: 'video',
   },
 ];
 
