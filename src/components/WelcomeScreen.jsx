@@ -8,7 +8,18 @@ function formatMin(sec) {
 
 export default function WelcomeScreen({ onSelectCategory, todaySec, streak }) {
   return (
-    <div className="mx-auto flex min-h-screen w-full max-w-2xl flex-col px-5 py-10">
+    <div className="mx-auto flex min-h-screen w-full max-w-2xl flex-col px-5 pb-10 pt-20">
+      {/* Retour vers l'espace des élèves (demande de Lucas, 16/09/2026 : « faut
+          pouvoir revenir sur la page principale quand on est dans l'app
+          respiration »). Placé SOUS la rangée des boutons fixes en haut à
+          droite, sinon les deux se chevauchent sur un écran de téléphone. */}
+      <a
+        href="https://lucasfanchon.com/mon-espace-colimao"
+        className="mb-8 self-start rounded-full bg-night-light/70 px-4 py-2 text-sm text-cream/80 transition hover:bg-night-light"
+      >
+        ← Mon espace COLIMAO
+      </a>
+
       <header className="mb-10 text-center">
         <p className="text-sm uppercase tracking-[0.3em] text-cream/60">
           Respiration
